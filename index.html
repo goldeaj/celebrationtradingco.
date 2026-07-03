@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebration Trading co.</title>
+  <meta name="description" content="Authorized dealer of leading brands in paints, cement, steel, tiles, sanitaryware, pipes, and construction solutions—serving Dehradun with quality products and expert guidance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & SYSTEM VARIABLES ===== */
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpolygon points='0,10 10,0 18,8 8,18' fill='%23eab308'/%3E%3Cpolygon points='0,10 10,0 6,4 4,6' fill='%23ff2424'/%3E%3Cpolygon points='8,18 18,8 22,12 12,22' fill='%2394a3b8'/%3E%3Cline x1='10' y1='20' x2='20' y2='10' stroke='%23475569' stroke-width='1.5'/%3E%3Cpath d='M13,21 L16,18 L25,27 C26.5,28.5 28.5,28.5 30,27 C31.5,25.5 31.5,23.5 30,22 L21,13 L18,16 Z' fill='%23b45309'/%3E%3Ccircle cx='27' cy='25' r='1.5' fill='%23fff'/%3E%3C/svg%3E") 0 0, auto;
+    }
+    a, button, select, input, textarea, .hamburger, .product-card, .gallery-img-card, .about-cta-pill, .all-products-btn, .nav-btn, .btn-black, .btn-ghost {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpolygon points='0,10 10,0 18,8 8,18' fill='%23eab308'/%3E%3Cpolygon points='0,10 10,0 6,4 4,6' fill='%2322c55e'/%3E%3Cpolygon points='8,18 18,8 22,12 12,22' fill='%2394a3b8'/%3E%3Cline x1='10' y1='20' x2='20' y2='10' stroke='%23475569' stroke-width='1.5'/%3E%3Cpath d='M13,21 L16,18 L25,27 C26.5,28.5 28.5,28.5 30,27 C31.5,25.5 31.5,23.5 30,22 L21,13 L18,16 Z' fill='%23b45309'/%3E%3Ccircle cx='27' cy='25' r='1.5' fill='%23fff'/%3E%3C/svg%3E") 0 0, pointer;
+    }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --white: #ffffff;
+      --black: #0a0a0a;
+      --near-black: #0a0b12;
+      --gray-50: #fcfcfd;
+      --gray-100: #f5f6f7;
+      --gray-200: #e1e4e8;
+      --gray-300: #d4d4d4;
+      --gray-400: #666666;
+      --gray-500: #2b2b2b;
+      --border: rgba(234,234,234,0.9);
+      --gold: #ffbb0f;
+      --gold-light: rgba(255,187,15,0.1);
+      --red: #ff2424;
+      --font: 'Inter', -apple-system, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--near-black);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== CENTERING WRAPPER ===== */
+    .section-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    /* ===== NAVBAR (MINIMAL & CENTERED IN MIDDLE) ===== */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+      width: calc(100% - 48px);
+      max-width: 640px; /* Small centered pill */
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6px 0 20px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      top: 15px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+      background: var(--near-black);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-name {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: var(--near-black);
+      line-height: 1.1;
+    }
+
+    .nav-logo-sub {
+      font-size: 8.5px;
+      color: var(--gray-400);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-500);
+      letter-spacing: -0.1px;
+      transition: all 0.2s;
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1.5px;
+      background: var(--near-black);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--near-black);
+    }
+
+    .nav-links a:hover::after {
+      width: 80%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--near-black);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 100px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-btn:hover {
+      background: #1a1a2e;
+      transform: translateY(-1px);
+    }
+
+    .nav-btn-yellow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--near-black);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 100px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-btn-yellow:hover {
+      background: #d4d4d4; /* light grey */
+      color: var(--near-black);
+      transform: translateY(-1px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 1.5px;
+      background: var(--near-black);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== HERO (FULLY CENTERED DESIGN) ===== */
+    .hero {
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      background: var(--gray-100);
+    }
+
+    /* Grid lines */
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.7;
+    }
+
+    .grid-line {
+      flex: 1;
+      border-right: 1px dashed rgba(234,234,234,0.6);
+    }
+    .grid-line:first-child { border-left: 1px dashed rgba(234,234,234,0.6); }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gray-100);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px 6px 6px;
+      animation: floatBadge 4s ease-in-out infinite;
+    }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .trust-avatars {
+      display: flex;
+    }
+
+    .trust-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid white;
+      overflow: hidden;
+      margin-left: -6px;
+      background: var(--gray-300);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--gray-500);
+    }
+    .trust-avatar:first-child { margin-left: 0; }
+
+    .trust-text {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gray-500);
+    }
+    .trust-text strong {
+      color: var(--near-black);
+      font-weight: 700;
+    }
+
+    .hero-title {
+      font-size: clamp(48px, 7vw, 92px);
+      font-weight: 800;
+      letter-spacing: -3.5px;
+      line-height: 0.92;
+      color: var(--near-black);
+      max-width: 750px;
+    }
+
+    .hero-title .italic {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      max-width: 520px;
+      letter-spacing: -0.1px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Centered Hero Image Frame */
+    .hero-image-frame {
+      width: 100%;
+      max-width: 960px;
+      margin: 56px auto 0;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--gray-100);
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-image-frame:hover img {
+      transform: scale(1.02);
+    }
+
+    .founder-badge-centered {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      z-index: 2;
+    }
+
+    .founder-img-small {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--gray-200);
+    }
+
+    .founder-img-small img { width: 100%; height: 100%; object-fit: cover; }
+
+    .founder-info-small .name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--near-black);
+    }
+
+    .founder-info-small .role {
+      font-size: 9.5px;
+      color: var(--gray-400);
+    }
+
+    /* ===== TICKER WITH LOGOS (BRAND LOGOS INSTEAD OF TEXT) ===== */
+    .ticker-wrap {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      padding: 40px 0;
+      position: relative;
+      background: var(--gray-100);
+    }
+
+    .ticker-wrap::before,
+    .ticker-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 180px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .ticker-wrap::before { left: 0; background: linear-gradient(90deg, white, transparent); }
+    .ticker-wrap::after { right: 0; background: linear-gradient(-90deg, white, transparent); }
+
+    .ticker {
+      display: flex;
+      width: max-content;
+      animation: ticker 32s linear infinite;
+      align-items: center;
+    }
+
+    /* .ticker:hover { animation-play-state: paused; } */
+
+    .ticker-logo-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 60px;
+      height: 60px;
+    }
+
+    .ticker-logo-img {
+      height: 50px;
+      max-width: 160px;
+      opacity: 0.8;
+      transition: all 0.3s;
+      object-fit: contain;
+      filter: grayscale(100%);
+    }
+
+    .ticker-logo-item:hover .ticker-logo-img {
+      opacity: 1;
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    .ticker-logo-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-400);
+      letter-spacing: -0.2px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ===== ABOUT SECTION (CENTERED) ===== */
+    .about-section {
+      padding: 100px 0;
+      position: relative;
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .about-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+    }
+
+    .about-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .about-desc {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      max-width: 580px;
+    }
+
+    .about-cards-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-top: 48px;
+      text-align: left;
+    }
+
+    .about-image-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 380px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+
+    .about-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .about-image-card:hover img { transform: scale(1.03); }
+
+    .about-info-card {
+      background: var(--gray-50);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .about-cta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--near-black);
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border-radius: 100px;
+      background: white;
+      transition: all 0.25s;
+      width: fit-content;
+    }
+
+    .about-cta-pill:hover {
+      border-color: var(--near-black);
+      background: var(--near-black);
+      color: white;
+    }
+
+    /* Stats row below about */
+    .stats-container {
+      margin-top: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .stat-cell {
+      padding: 32px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-cell:last-child { border-right: none; }
+
+    .stat-num {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1;
+      color: var(--near-black);
+      margin-bottom: 6px;
+    }
+    .stat-num .gold { color: var(--gold); }
+
+    .stat-lbl {
+      font-size: 12px;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+
+    /* ===== PRODUCTS SECTION (CENTERED) ===== */
+    .products-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      background: var(--gray-100);
+    }
+
+    .products-header-centered {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .products-title {
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+    }
+
+    .products-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .products-desc {
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    .product-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-card-img {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--gray-100);
+      clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%);
+    }
+
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .product-card:hover .product-card-img img {
+      transform: scale(1.03);
+    }
+
+    .product-card-body {
+      padding: 16px 0 0 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .product-card-cat {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+
+    .product-card-name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--near-black);
+      margin-bottom: 4px;
+    }
+
+    .product-card-brands {
+      font-size: 12px;
+      color: var(--gray-400);
+      line-height: 1.4;
+    }
+
+    .product-card-arrow {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      color: var(--near-black);
+    }
+
+    .product-card:hover .product-card-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    /* ===== REVIEWS (CENTERED SCROLL) ===== */
+    .reviews-section {
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .reviews-header-centered {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviews-title {
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+    }
+
+    .reviews-title em { font-style: italic; font-weight: 400; }
+
+    .reviews-sub {
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    .reviews-track-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: reviewScroll 42s linear infinite;
+      padding: 10px 0;
+    }
+    .reviews-track:hover { animation-play-state: paused; }
+
+    @keyframes reviewScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .review-card {
+      width: 340px;
+      flex-shrink: 0;
+      background: var(--gray-50);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+      transition: all 0.3s;
+    }
+    .review-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+    .review-stars span { color: var(--gold); font-size: 12px; }
+
+    .review-text {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--near-black);
+      margin-bottom: 20px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--gray-200);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-500);
+    }
+
+    .review-name {
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+    .review-role {
+      font-size: 10.5px;
+      color: var(--gray-400);
+    }
+
+    /* ===== GALLERY SECTION (CENTERED) ===== */
+    .gallery-section {
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+      text-align: center;
+      background: var(--gray-100);
+    }
+
+    .gallery-header-centered {
+      max-width: 600px;
+      margin: 0 auto 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .gallery-title {
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+    }
+    .gallery-title em { font-style: italic; font-weight: 400; }
+
+    .gallery-desc {
+      font-size: 15px;
+      color: var(--gray-500);
+    }
+
+    .gallery-grid-centered {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-img-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 1;
+      background: var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    }
+
+    .gallery-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-img-card:hover img { transform: scale(1.05); }
+
+    /* ===== CONTACT SECTION (CENTERED) ===== */
+    .contact-section {
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+    }
+
+    .contact-grid-centered {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-left-info {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contact-title {
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+    }
+    .contact-title em { font-style: italic; font-weight: 400; }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--gray-50);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+    }
+
+    .contact-detail-icon {
+      font-size: 18px;
+    }
+
+    .contact-detail-text h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .contact-detail-text p {
+      font-size: 12.5px;
+      color: var(--gray-400);
+      line-height: 1.4;
+    }
+
+    .contact-right-form {
+      background: var(--gray-50);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 36px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-family: var(--font);
+      background: white;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .form-group textarea { height: 90px; resize: none; }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--near-black);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--near-black);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .form-submit:hover {
+      background: #1a1a2e;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--near-black);
+      color: var(--white);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo-mark {
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--near-black);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .footer-logo-name {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .footer-logo-sub {
+      font-size: 8.5px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-tagline {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      max-width: 250px;
+    }
+
+    .footer-col-title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bottom-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s;
+    }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===== SCROLL REVEAL CLASS & LOAD ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+    .reveal-delay-3 { transition-delay: 0.45s; }
+    .reveal-delay-4 { transition-delay: 0.6s; }
+
+    /* Page load enter animations */
+    .fade-in-up-load {
+      animation: fadeInUpLoad 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeInUpLoad {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== FLOATING WHATSAPP BUTTON ===== */
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .floating-wa:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      color: white;
+    }
+
+    /* ===== MOBILE NAV OVERLAY ===== */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: white;
+      z-index: 2000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    .mobile-overlay.open { display: flex; }
+
+    .mobile-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--near-black);
+    }
+
+    .mobile-link {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--near-black);
+      letter-spacing: -1px;
+    }
+
+    /* ===== RESPONSIVE STYLES ===== */
+    @media (max-width: 1024px) {
+      .gallery-grid-centered { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 32px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .nav-links, .nav-btn { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { padding-top: 110px; }
+      .hero-image-frame { margin-top: 36px; }
+
+      .about-cards-wrap { grid-template-columns: 1fr; }
+      .about-image-card { height: 280px; }
+      .about-info-card { padding: 24px; }
+
+      .stats-container { grid-template-columns: 1fr; }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-cell:last-child { border-bottom: none; }
+
+      .product-cards-grid { grid-template-columns: 1fr; }
+
+      .contact-grid-centered { grid-template-columns: 1fr; gap: 36px; }
+      .contact-right-form { padding: 24px; }
+
+      .footer-top { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (MINIMAL & CENTERED) -->
+  <nav class="navbar" id="navbar">
+    <a class="nav-logo" href="#">
+      <img src="logos/nav-logo.png" alt="Celebration Trading Co. Logo" style="height:32px; width:auto; margin-right:4px; border-radius:6px; object-fit:contain;">
+      <div>
+        <div class="nav-logo-name">Celebration Trading</div>
+        <div class="nav-logo-sub">Co. — Dehradun</div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About us</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="#contact" class="nav-btn-yellow">Contact us</a>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <button class="mobile-close-btn" id="mobileClose">✕</button>
+    <a class="mobile-link" href="#products" onclick="closeMobile()">Products</a>
+    <a class="mobile-link" href="#about" onclick="closeMobile()">About us</a>
+    <a class="mobile-link" href="#contact" onclick="closeMobile()">Contact us</a>
+  </div>
+
+  <!-- HERO SECTION (CENTERED) -->
+  <section class="hero">
+    <div class="grid-lines">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+
+    <div class="section-container">
+      <div class="hero-content fade-in-up-load">
+        <div class="trust-badge">
+          <div class="trust-avatars">
+            <div class="trust-avatar">V</div>
+            <div class="trust-avatar">M</div>
+            <div class="trust-avatar">S</div>
+            <div class="trust-avatar">A</div>
+          </div>
+          <div class="trust-text"><strong>Trusted by 5,000+</strong> homeowners &amp; builders</div>
+        </div>
+
+        <h1 class="hero-title">
+          Everything<br>
+          Build <span class="italic">Better.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Authorized dealer of leading brands in paints, cement, steel, tiles, sanitaryware, pipes, and construction solutions—serving Dehradun with quality products and expert guidance.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-black">
+            Contact us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#products" class="btn-ghost">Explore Products</a>
+        </div>
+      </div>
+
+      <!-- Center Hero Image Frame -->
+      <div class="hero-image-frame fade-in-up-load" id="heroImage" style="animation-delay: 0.15s; z-index: 2;">
+        <img
+          src="https://framerusercontent.com/images/QSTjV9lf2vXnjz1EBmobDiRYSKE.png"
+          alt="Celebration Trading Co. Store"
+          onerror="this.style.background='#f0ede4';this.removeAttribute('src')"
+        >
+        <!-- Founder Badge floating inside frame bottom-right -->
+        <div class="founder-badge-centered">
+          <div class="founder-img-small">
+            <img
+              src="https://framerusercontent.com/images/55xBXNsPMsab655Wxbdyjia0qSs.png"
+              alt="Vipin Rawat"
+              onerror="this.style.background='#ddd';this.removeAttribute('src')"
+            >
+          </div>
+          <div class="founder-info-small">
+            <div class="name">Vipin Rawat</div>
+            <div class="role">Founder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER WITH MOVING IMAGES -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <!-- Asian Paints -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/logo-home.png" alt="Asian Paints" style="filter:none;">
+      </div>
+      <!-- Birla Opus -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/birla-opus-paints-logo-png_seeklogo-541342.png" alt="Birla Opus" style="filter:none;">
+      </div>
+      <!-- UltraTech -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/ULTRACEMCO.NS-d26e8933.png" alt="UltraTech Cement" style="filter:none;">
+      </div>
+      <!-- Kajaria -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/Kajaria-Tiles-Logo-Vector.svg-.png" alt="Kajaria Tiles" style="filter:none;">
+      </div>
+      <!-- Dr. Fixit -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/Dr-fixit-2019.png" alt="Dr. Fixit" style="filter:none;">
+      </div>
+      <!-- Brand Logo OIP -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/OIP.jpg" alt="Brand Logo" style="filter:none;">
+      </div>
+      <!-- Brand Logo pngaaa -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/pngaaa.com-1781092.png" alt="Brand Logo" style="filter:none;">
+      </div>
+
+      <!-- DUPLICATE FOR SEAMLESS LOOP -->
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/logo-home.png" alt="Asian Paints" style="filter:none;">
+      </div>
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/birla-opus-paints-logo-png_seeklogo-541342.png" alt="Birla Opus" style="filter:none;">
+      </div>
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/ULTRACEMCO.NS-d26e8933.png" alt="UltraTech Cement" style="filter:none;">
+      </div>
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/Kajaria-Tiles-Logo-Vector.svg-.png" alt="Kajaria Tiles" style="filter:none;">
+      </div>
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/Dr-fixit-2019.png" alt="Dr. Fixit" style="filter:none;">
+      </div>
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/OIP.jpg" alt="Brand Logo" style="filter:none;">
+      </div>
+      <div class="ticker-logo-item">
+        <img class="ticker-logo-img" src="logos/pngaaa.com-1781092.png" alt="Brand Logo" style="filter:none;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION (CENTERED) -->
+  <section class="about-section" id="about">
+    <div class="section-container">
+      <div class="about-content reveal">
+        <div class="about-section-tag">// About us</div>
+        <h2 class="about-title">
+          Trusted Building &amp;<br>
+          Solutions <em>Partner.</em>
+        </h2>
+        <p class="about-desc">
+          From construction essentials to premium finishing materials, we offer trusted brands, expert support, and a complete product range for homes and commercial projects.
+        </p>
+      </div>
+
+      <div class="about-cards-wrap">
+        <!-- Main showcase image -->
+        <div class="about-image-card reveal">
+          <img
+            src="commitment.webp"
+            alt="About Celebration Trading"
+            onerror="this.style.background='#f0ede4';this.removeAttribute('src')"
+          >
+        </div>
+
+        <!-- Info Card -->
+        <div class="about-info-card reveal reveal-delay-1">
+          <div>
+            <p class="section-label" style="margin-bottom:8px">OUR COMMITMENT</p>
+            <p class="about-desc" style="font-size:14px; color: var(--gray-500);">
+              We provide quality construction materials with authentic brands, expert guidance, and competitive pricing—making building better accessible for every project in Dehradun.
+            </p>
+          </div>
+
+          <a href="#contact" class="about-cta-pill">
+            <span>More about us</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-container reveal">
+        <div class="stat-cell">
+          <div class="stat-num" data-count="500">0<span class="gold">+</span></div>
+          <div class="stat-lbl">Completed projects</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" data-count="98">0<span class="gold">%</span></div>
+          <div class="stat-lbl">Client satisfaction</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" data-count="20">0<span class="gold">+</span></div>
+          <div class="stat-lbl">Years of experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION (CENTERED) -->
+  <section class="products-section" id="products">
+    <div class="section-container">
+      <div class="products-header-centered reveal">
+        <div class="products-section-tag">// Featured</div>
+        <h2 class="products-title">Product <em>Categories</em></h2>
+        <p class="products-desc">Everything you need for construction, renovation, and interior finishing—all under one roof.</p>
+      </div>
+
+      <div class="product-cards-grid">
+        <!-- Paint Category -->
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-card-img">
+            <img src="logos/paint image.jpg" alt="Paints" onerror="this.style.background='#f5e6c8';this.removeAttribute('src')">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-info">
+              <div class="product-card-name">Paints</div>
+              <div class="product-card-brands">Asian Paints, Birla Opus, Dr Fixit</div>
+            </div>
+            <div class="product-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tiles & Stone -->
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-card-img">
+            <img src="logos/tiles.png" alt="Tiles & Stone" onerror="this.style.background='#e8e4f0';this.removeAttribute('src')">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-info">
+              <div class="product-card-name">Tiles &amp; Stone</div>
+              <div class="product-card-brands">Premium Tiles, Granite Stone, Savino, Simpolo, Johnson Tiles</div>
+            </div>
+            <div class="product-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sanitaryware -->
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-card-img">
+            <img src="logos/sanitaryware.jpeg" alt="Sanitaryware" onerror="this.style.background='#e4eef5';this.removeAttribute('src')">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-info">
+              <div class="product-card-name">Sanitaryware</div>
+              <div class="product-card-brands">CERA, Jaquar, Hindware, Parryware, Kohler, Sonet</div>
+            </div>
+            <div class="product-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Construction Materials -->
+        <div class="product-card reveal reveal-delay-4">
+          <div class="product-card-img">
+            <img src="logos/steel.jpg" alt="Construction Materials">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-info">
+              <div class="product-card-name">Construction Materials</div>
+              <div class="product-card-brands">UltraTech Cement, Tehri Gold TMT Steel</div>
+            </div>
+            <div class="product-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section class="reviews-section" id="reviews">
+    <div class="section-container">
+      <div class="reviews-header-centered reveal">
+        <div class="reviews-tag">// Customer Reviews</div>
+        <h2 class="reviews-title">Trusted <em>clients</em></h2>
+        <p class="reviews-sub">Homeowners, builders, contractors, and businesses trust Celebration Trading Co. for quality materials and dependable service.</p>
+      </div>
+
+      <div class="reviews-track-wrap">
+        <div class="reviews-track">
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Structured layouts that feel intentional, refined, and timeless."</p>
+            <div class="review-author">
+              <div class="review-avatar">M</div>
+              <div>
+                <div class="review-name">Mangal singh</div>
+                <div class="review-role">Homeowner, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Clean design that communicates trust and attention to detail."</p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div>
+                <div class="review-name">SP Solanki</div>
+                <div class="review-role">Property Owner, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">CELEBRATION TRADING.CO offers reasonably priced products. Their prices are excellent and affordable.</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <div class="review-name">Akashdeep</div>
+                <div class="review-role">Business Owner, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">Excellent service. Very professional team, prompt delivery and genuine products every time.</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <div class="review-name">Abhishek Sharma</div>
+                <div class="review-role">Client, Dehradun</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Top quality construction materials and very prompt delivery. Highly recommended for any project."</p>
+            <div class="review-author">
+              <div class="review-avatar">R</div>
+              <div>
+                <div class="review-name">Rahul Verma</div>
+                <div class="review-role">Contractor, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Found all the premium tile brands under one roof. The staff was incredibly helpful with selection."</p>
+            <div class="review-author">
+              <div class="review-avatar">P</div>
+              <div>
+                <div class="review-name">Priya Sharma</div>
+                <div class="review-role">Interior Designer, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate for ticker loop -->
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Structured layouts that feel intentional, refined, and timeless."</p>
+            <div class="review-author">
+              <div class="review-avatar">M</div>
+              <div>
+                <div class="review-name">Mangal singh</div>
+                <div class="review-role">Homeowner, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Clean design that communicates trust and attention to detail."</p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div>
+                <div class="review-name">SP Solanki</div>
+                <div class="review-role">Property Owner, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">CELEBRATION TRADING.CO offers reasonably priced products. Their prices are excellent and affordable.</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <div class="review-name">Akashdeep</div>
+                <div class="review-role">Business Owner, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">Excellent service. Very professional team, prompt delivery and genuine products every time.</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <div class="review-name">Abhishek Sharma</div>
+                <div class="review-role">Client, Dehradun</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Top quality construction materials and very prompt delivery. Highly recommended for any project."</p>
+            <div class="review-author">
+              <div class="review-avatar">R</div>
+              <div>
+                <div class="review-name">Rahul Verma</div>
+                <div class="review-role">Contractor, Dehradun</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="review-text">"Found all the premium tile brands under one roof. The staff was incredibly helpful with selection."</p>
+            <div class="review-author">
+              <div class="review-avatar">P</div>
+              <div>
+                <div class="review-name">Priya Sharma</div>
+                <div class="review-role">Interior Designer, Dehradun</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION (CENTERED) -->
+  <section class="gallery-section">
+    <div class="section-container">
+      <div class="gallery-header-centered reveal">
+        <div class="gallery-tag">// Our Store</div>
+        <h2 class="gallery-title">Quality You Can <em>See</em> &amp; Touch.</h2>
+        <p class="gallery-desc">Visit our store in Dehradun to experience our wide range of construction materials.</p>
+      </div>
+
+      <div class="gallery-grid-centered reveal">
+        <div class="gallery-img-card">
+          <img src="logos/store1.jpg" alt="Store Storefront">
+        </div>
+        <div class="gallery-img-card">
+          <img src="logos/store2.jpg" alt="Paints Display">
+        </div>
+        <div class="gallery-img-card">
+          <img src="logos/store3.jpg" alt="Materials Warehouse">
+        </div>
+        <div class="gallery-img-card">
+          <img src="logos/store4.jpg" alt="Stone and Tiles">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (CENTERED) -->
+  <section class="contact-section" id="contact">
+    <div class="section-container">
+      <div class="contact-grid-centered">
+        <div class="contact-left-info reveal">
+          <div class="contact-tag">// Contact us</div>
+          <h2 class="contact-title">Let's Build <em>Together.</em></h2>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">📍</div>
+              <div class="contact-detail-text">
+                <h4>Store Location</h4>
+                <p>Mothrowala Rd, Dhudli Bypass, Nauka, Dehradun, Uttarakhand</p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">📞</div>
+              <div class="contact-detail-text">
+                <h4>Phone</h4>
+                <p><a href="tel:7060141750" style="color: inherit; text-decoration: none;">+91 7060141750</a></p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">🕐</div>
+              <div class="contact-detail-text">
+                <h4>Business Hours</h4>
+                <p>Mon–Sat: 9:00 AM – 7:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right-form reveal reveal-delay-1" style="padding: 0; overflow: hidden; height: 100%; min-height: 350px;">
+          <iframe 
+            src="https://maps.google.com/maps?q=30.23891516456537,78.02694014258304&hl=en&z=15&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 350px;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="section-container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="footer-brand-logo">
+            <img src="logos/nav-logo.png" alt="Celebration Trading Co. Logo" style="height:32px; width:auto; margin-right:4px; border-radius:4px; object-fit:contain; background: white; padding: 2px;">
+            <div>
+              <div class="footer-logo-name">Celebration Trading</div>
+              <div class="footer-logo-sub">Co. — Dehradun</div>
+            </div>
+          </div>
+          <p class="footer-tagline">Authorized dealer of leading construction material brands, serving Dehradun since 2004.</p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Products</div>
+          <ul class="footer-links">
+            <li><a href="#products">Paints</a></li>
+            <li><a href="#products">Tiles &amp; Stone</a></li>
+            <li><a href="#products">Sanitaryware</a></li>
+            <li><a href="#products">Construction Materials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#about">About us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="#">Nauka, Dehradun</a></li>
+            <li><a href="tel:7060141750">+91 7060141750</a></li>
+            <li><a href="#">Mon–Sat, 9AM–7PM</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 Celebration Trading Co. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/7060141750" class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.127.553 4.195 1.604 6.015L.178 24l6.14-1.604A11.967 11.967 0 0012.031 24c6.646 0 12.031-5.385 12.031-12.031C24.062 5.385 18.677 0 12.031 0zm3.897 17.202c-.167.472-.977.925-1.396.96-.4.032-.904.093-2.906-.732-2.417-.995-3.955-3.447-4.075-3.606-.12-.158-.97-1.288-.97-2.456s.614-1.737.834-1.974c.22-.238.482-.298.643-.298.158 0 .317 0 .456.007.147.008.344-.055.539.414.197.475.674 1.644.733 1.763.06.118.099.256.02.395-.078.138-.118.225-.238.364-.12.138-.256.295-.364.395-.12.118-.246.246-.11.482.138.238.614 1.015 1.32 1.642.912.81 1.684 1.06 1.921 1.178.238.118.375.099.514-.06.138-.158.604-.702.762-.942.158-.238.317-.197.539-.118.22.078 1.405.662 1.643.78s.395.178.456.277c.059.099.059.574-.108 1.046z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburger.addEventListener('click', () => {
+      mobileOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    mobileClose.addEventListener('click', closeMobile);
+
+    function closeMobile() {
+      mobileOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // Counter animation
+    function animateCounter(el, target, suffix) {
+      const duration = 1600;
+      const start = performance.now();
+      const update = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(ease * target);
+        el.innerHTML = current + '<span class="gold">' + suffix + '</span>';
+        if (progress < 1) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    }
+
+    const statCells = document.querySelectorAll('.stat-cell');
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const num = e.target.querySelector('.stat-num');
+          const count = parseInt(num.dataset.count);
+          const suffix = num.innerHTML.includes('%') ? '%' : '+';
+          if (!num.dataset.animated) {
+            num.dataset.animated = '1';
+            animateCounter(num, count, suffix);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    statCells.forEach(s => statObserver.observe(s));
+
+    // Form submit
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.addEventListener('click', () => {
+      submitBtn.textContent = '✓ Sent!';
+      submitBtn.style.background = '#22c55e';
+      setTimeout(() => {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.style.background = '';
+      }, 3000);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Hero Parallax Scroll
+    const heroImage = document.getElementById('heroImage');
+    if(heroImage) {
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        // Only animate while within upper portion of the page
+        if (scrollY < window.innerHeight * 1.5) {
+          const yPos = -(scrollY * 0.35); 
+          const scale = 1 + (scrollY * 0.0004);
+          heroImage.style.transform = `translateY(${yPos}px) scale(${scale})`;
+        }
+      }, { passive: true });
+    }
+
+    // Typewriter effect for Hero Title
+    const heroTitle = document.querySelector('.hero-title');
+    if(heroTitle) {
+      const text1 = "Everything";
+      const text2 = "Build ";
+      const text3 = "Better.";
+      
+      // Inject cursor style dynamically
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .cursor { display: inline-block; width: 4px; background-color: var(--near-black); animation: blink 1s step-end infinite; margin-left: 4px; }
+        @keyframes blink { 50% { opacity: 0; } }
+      `;
+      document.head.appendChild(style);
+
+      heroTitle.innerHTML = '<span id="type1"></span><br><span id="type2"></span><span id="type3" class="italic"></span><span class="cursor">|</span>';
+      
+      const t1 = document.getElementById('type1');
+      const t2 = document.getElementById('type2');
+      const t3 = document.getElementById('type3');
+      const cursor = document.querySelector('.cursor');
+      
+      let i=0, j=0, k=0;
+      function typeText() {
+        if (i < text1.length) {
+          t1.innerHTML += text1.charAt(i); i++;
+          setTimeout(typeText, 60);
+        } else if (j < text2.length) {
+          t2.innerHTML += text2.charAt(j); j++;
+          setTimeout(typeText, 60);
+        } else if (k < text3.length) {
+          t3.innerHTML += text3.charAt(k); k++;
+          setTimeout(typeText, 60);
+        } else {
+          cursor.style.display = 'none'; // hide cursor when done
+        }
+      }
+      setTimeout(typeText, 300); // start after a small delay
+    }
+  </script>
+</body>
+</html>
